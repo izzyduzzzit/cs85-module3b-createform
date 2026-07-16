@@ -1,51 +1,38 @@
-<?php
-
-// Izarra Villareal
-
-/* Assignment objectives
-1.	Create an HTML form (self-processing, method="POST") with fields:
-    a.	Full Name
-    b.	Email Address
-    c.	Topic of Message (something meaningful to you)
-    d.	Message (textarea, 50–150 words required)
-2.	Write PHP to:
-    a.	Detect submission
-    b.	Sanitize inputs using htmlspecialchars()
-    c.	Validate inputs and show thank you message on success
-3.	In comments, write:
-    a.	Your output predictions
-    b.	What you expect to see in $_POST
-    c.	Post-test reflections: surprises, fixes, insights
-*/
-
-/* Example output
-Thank you, Jordan! We received your message about: "Labrador training tips"
-We'll get back to you at jordan@example.com.
-*/
-
-// Exploring superglobals with a survey example
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && !empty($_GET)) {
-  echo "<h3>Survey Results</h3>";
-  echo "<p>Favorite Color: " . htmlspecialchars($_GET['color']) . "</p>";
-  echo "<p>Favorite Movie: " . htmlspecialchars($_GET['movie']) . "</p>";
-}
-?>
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Contact Form</title>
+    <title>Contact Izarra</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<div class="container">
-    <form action="" method="GET">
-        <label for="color">Favorite Color:</label>
-        <input type="text" id="color" name="color" required><br>
-        <label for="movie">Favorite Movie:</label>
-        <input type="text" id="movie" name="movie" required><br>
-        <input type="submit" value="Submit Survey">
-    </form>
-</div>
+<h2>Contact Izarra</h2>
+<form action="" method="POST">
+    <label for="name">
+        Full Name:
+    </label>
+    <input type="text" id="name" name="name" required>
+    <br>
+	<br>
+    <label for="email">
+        Email Address:
+    </label>
+    <input type="email" id="email" name="email" required>
+    <br>
+	<br>
+    <label for="topic">
+        Topic of Message:
+    </label>
+    <input type="text" id="topic" name="topic" required>
+    <br>
+	<br>
+    <label for="message">
+        Message:
+    </label>
+    <br>
+    <textarea id="message" name="message" rows="6" cols="50" minlength="50" maxlength="150" required></textarea>
+    <br>
+	<br>
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
