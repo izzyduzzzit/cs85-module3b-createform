@@ -9,6 +9,29 @@
 <body>
 
 <?php
+// Name: Izarra Villareal
+// Github URL: https://github.com/izzyduzzzit/cs85-module3b-createform
+
+/* My prediction is that if I enter the following:
+    Izzy
+    villareal_izarra@student.smc.edu
+    Rock Climbing
+    Hello, I am interested in the rock climbing trip next weekend.
+
+That my form will respond by displaying the following once I click submit:
+    Thank you, Izzy!
+    We received your messaged about: Rock Climbing
+    We will get back to you at villareal_izarra@student.smc.edu
+
+Results:
+    I ended up running into issues with trying to get a word count to work so I settled for a character minimum.
+    This character minimum ended up causing me issues with my initial message. I also tested using a bad email address
+    and that responded correctly by telling me to correct the format of the text entered. I am correctly prompted
+    to correct mistakes when I leave fields empty and my sticky form behavior is working. I also ran into issues
+    trying to submit this form within Laravel so I had to use php -S localhost:8000 to test my page out. I am happy with
+    my results. I learned a lot trying to put this together, I would just like to know how to get word count working.
+    I will save that for another day.
+*/
 
 // Variable for holding whether the form passes validation
 $submitted = false;
