@@ -5,6 +5,46 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+
+<?php
+// Variable for whether the form upon submission passes validation and is considered submitted
+$submitted = false;
+
+// Variables that will hold the data entered by form user
+$name = "";
+$email = "";
+$topic = "";
+$message = "";
+
+// PHP logic to check that the form method is post upon submit
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = ($_POST['name']);
+    $email = ($_POST['email']);
+    $topic = ($_POST['topic']);
+    $message = ($_POST['message']);
+	{
+        $submitted = true;
+    }
+}
+?>
+
+<?php
+// PHP form submission handling logic
+if ($submitted == true) {
+?>
+<h2>Thank you, <?php echo $name; ?>!</h2>
+<p>
+    We received your message about:
+    "<?php echo $topic; ?>"
+</p>
+<p>
+    We'll get back to you at
+    <?php echo $email; ?>.
+</p>
+<?php
+} else {
+?>
+
 <h2>Contact Izarra</h2>
 <form action="" method="POST">
     <label for="name">
@@ -34,5 +74,10 @@
 	<br>
     <input type="submit" value="Submit">
 </form>
+
+<?php
+}
+?>
+
 </body>
 </html>
