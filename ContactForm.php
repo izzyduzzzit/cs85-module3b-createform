@@ -18,11 +18,20 @@ $message = "";
 
 // PHP logic to check that the form method is post upon submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = ($_POST['name']);
-    $email = ($_POST['email']);
-    $topic = ($_POST['topic']);
-    $message = ($_POST['message']);
-	{
+
+    // htmlspecialchars used to prevent XSS (cross-site scripting) attacks via form input
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $topic = htmlspecialchars($_POST['topic']);
+    $message = htmlspecialchars($_POST['message']);
+
+    // PHP input validation logic
+    if (
+        !empty($name) &&
+        !empty($email) &&
+        !empty($topic) &&
+        !empty($message)
+    )	{
         $submitted = true;
     }
 }
